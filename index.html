@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【記入用】自己紹介ムービー制作ヒアリングシート</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --sheet-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --accent-gold: #D4AF37;
+            --border-color: #e0e0e0;
+            --input-bg: #fafafa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen {
+            body {
+                font-family: 'Noto Sans JP', sans-serif;
+                background-color: var(--bg-color);
+                color: var(--text-main);
+                line-height: 1.6;
+                padding: 40px 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .sheet-container {
+            width: 100%;
+            max-width: 210mm;
+            background-color: var(--sheet-bg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 60px;
+            position: relative;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 18px;
+            background-color: #0f172a;
+            color: #fff;
+            padding: 8px 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h2 span.phase {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+
+        h2 span.desc {
+            font-size: 13px;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #0f172a;
+        }
+
+        label small {
+            font-weight: 400;
+            color: var(--text-sub);
+            margin-left: 5px;
+            font-size: 13px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            background-color: var(--input-bg);
+            border-radius: 4px;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 14px;
+            color: var(--text-main);
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background-color: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: var(--accent-gold);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .fill-blank-wrapper {
+            background-color: #fdfdfd;
+            border: 1px dashed var(--accent-gold);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .fill-blank {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .fill-blank input {
+            border: none;
+            border-bottom: 2px solid var(--text-main);
+            background: transparent;
+            width: 250px;
+            padding: 5px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .usage-guide {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 40px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .usage-guide h3 {
+            font-size: 15px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .usage-guide ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .usage-guide li {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .usage-guide li::before {
+            content: "•";
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+        }
+
+        .download-area {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .print-btn {
+            background-color: var(--accent-gold);
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+            background-color: #c4a030;
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+                margin: 0;
+            }
+            .download-area, .print-btn {
+                display: none !important;
+            }
+            .sheet-container {
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
+                max-width: none;
+            }
+            textarea, input {
+                background-color: transparent !important;
+                border: 1px solid #ddd !important;
+            }
+            .fill-blank-wrapper {
+                border: 1px solid #ddd !important;
+            }
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="download-area">
+        <button id="mainPrintBtn" class="print-btn">
+            <i class="fa-solid fa-file-pdf"></i> PDFとして保存 / 印刷する
+        </button>
+        <p style="margin-top: 10px; font-size: 13px; color: #666;">※クリックして印刷メニューが開いたら「PDFに保存」を選択してください。</p>
+    </div>
+
+    <div class="sheet-container">
+        <header>
+            <div>
+                <p class="subtitle">SELF-INTRODUCTION MOVIE STRATEGY</p>
+                <h1>ヒアリングシート（案件獲得特化）</h1>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size: 12px; color: #999;">Date: <span style="display:inline-block; border-bottom:1px solid #ccc; width: 100px;"></span></p>
+            </div>
+        </header>
+
+        <!-- Basic Info -->
+        <section>
+            <h2 style="background: #fff; color: #0f172a; border-bottom: 2px solid #0f172a; padding-left: 0;">
+                <span style="font-size:18px;">基本情報</span>
+            </h2>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>氏名（活動名）</label>
+                    <input type="text" placeholder="例：山田 太郎">
+                </div>
+                <div class="form-group">
+                    <label>職種</label>
+                    <input type="text" placeholder="例：宅録ナレーター／映像モデル">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>主なターゲット</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox"> 動画制作会社</label>
+                    <label class="checkbox-item"><input type="checkbox"> 広告代理店</label>
+                    <label class="checkbox-item"><input type="checkbox"> 企業（広報・マーケ）</label>
+                    <label class="checkbox-item"><input type="checkbox"> その他 <input type="text" style="width: 150px; margin-left:5px; border:none; border-bottom:1px solid #ccc; padding:2px; background: transparent;"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>想定する動画用途</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox"> HP</label>
+                    <label class="checkbox-item"><input type="checkbox"> 営業送付</label>
+                    <label class="checkbox-item"><input type="checkbox"> YouTube</label>
+                    <label class="checkbox-item"><input type="checkbox"> SNS</label>
+                    <label class="checkbox-item"><input type="checkbox"> その他 <input type="text" style="width: 150px; margin-left:5px; border:none; border-bottom:1px solid #ccc; padding:2px; background: transparent;"></label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 1 -->
+        <section>
+            <h2>
+                <div><span class="phase">01. Open Loop</span> オープンループ（開け）</div>
+                <span class="desc">数字・事実で「問題提起」</span>
+            </h2>
+            
+            <div class="form-group">
+                <label>Q1. 業界内で、あまり表に出ていないが「実は大きな問題」だと感じていることは何ですか？<small>（例：修正が多い／意図が伝わらない 等）</small></label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q2. その問題は、数字・割合・頻度などで表現できますか？<small>（例：〇回の修正／〇割が再録 等）</small></label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q3. 視聴者が「それ、あるある…」と感じそうな一文にすると？</label>
+                <textarea rows="2" style="background-color: #f0f4f8; border-color: #cbd5e1;"></textarea>
+            </div>
+        </section>
+
+        <!-- Phase 2 -->
+        <section>
+            <h2>
+                <div><span class="phase">02. Belief</span> 信念（Why）</div>
+                <span class="desc">差別化ポイント</span>
+            </h2>
+
+            <div class="form-group">
+                <label>Q4. なぜ、あなたは今の仕事を「売っている」のですか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q5. 同業者と決定的に違う「考え方・スタンス」は何ですか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q6. クライアントが気づいていない課題は何だと思いますか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q7. 「だから私は◯◯だと信じています」と言える信念は？</label>
+                <div class="fill-blank-wrapper">
+                    <div class="fill-blank">
+                        だから私は、
+                        <input type="text" placeholder="ここに核となる信念を記入">
+                        と信じています。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 3 -->
+        <section>
+            <h2>
+                <div><span class="phase">03. Story</span> ストーリー</div>
+                <span class="desc">共感と記憶の定着</span>
+            </h2>
+
+            <div class="form-group">
+                <label>Q8. なぜ、今その仕事をやっているのですか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q9. 今の信念に行き着いた出来事・きっかけは何ですか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q10. 今でも忘れられないクライアントや現場での一言は？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q11. その出来事で、自分の考え方はどう変わりましたか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+        </section>
+
+        <div style="page-break-before: always;"></div>
+
+        <!-- Phase 4 -->
+        <section style="margin-top: 40px;">
+            <h2>
+                <div><span class="phase">04. Numbers</span> 数字</div>
+                <span class="desc">客観的な信頼性の補強</span>
+            </h2>
+
+            <div class="form-group">
+                <label>Q12. これまでの実績を数字で教えてください</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; background: #fafafa; padding: 15px; border: 1px solid #eee;">
+                    <div>
+                        <label style="font-size:12px;">活動年数</label>
+                        <input type="text" style="width:100%;" placeholder="〇年">
+                    </div>
+                    <div>
+                        <label style="font-size:12px;">累計案件数</label>
+                        <input type="text" style="width:100%;" placeholder="〇〇件">
+                    </div>
+                    <div style="grid-column: 1 / -1;">
+                        <label style="font-size:12px;">主なジャンル</label>
+                        <input type="text" style="width:100%;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Q13. リピート・継続に関する事実はありますか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q14. よく言われる評価・言葉があれば教えてください</label>
+                <textarea rows="2"></textarea>
+            </div>
+        </section>
+
+        <!-- Phase 5 -->
+        <section>
+            <h2>
+                <div><span class="phase">05. Close</span> オープンループ（閉じ）</div>
+                <span class="desc">疑問の解消と行動喚起</span>
+            </h2>
+
+            <div class="form-group">
+                <label>Q15. 冒頭で提示した問題に対する、あなたなりの答えは何ですか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q16. なぜ、あなたならその問題を解決できるのですか？</label>
+                <textarea rows="2"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Q17. 視聴者に次に取ってほしい行動は？</label>
+                <textarea rows="2"></textarea>
+            </div>
+        </section>
+
+        <div class="usage-guide">
+            <h3><i class="fa-solid fa-circle-info"></i> アドバイス</h3>
+            <ul>
+                <li><strong>正直さを優先：</strong> 本音の方が視聴者の心に刺さります。</li>
+                <li><strong>印刷して書き込む：</strong> 手を動かして書くことで、より深いエピソードを思い出しやすくなります。</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div style="margin-bottom: 60px;"></div>
+
+    <script>
+        // Use standard event listener for better reliability
+        document.getElementById('mainPrintBtn').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
+</body>
+</html>
